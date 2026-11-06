@@ -20,4 +20,25 @@ df = charger_donnees()
 
 st.write("Ce tableau rassemble les relevés mensuels de 12 quartiers, de janvier 2024 à décembre 2025.")
 st.write("Chaque relevé combine consommation, abonnés, heures de courant et données météo.")
-st.dataframe(df, hide_index=True)
+communes = sorted(df["commune"].unique())
+communes_choisies = st.sidebar.multiselect(
+    "Communes",
+    communes,
+    default=communes
+)
+
+annees = sorted(df["annee"].unique())
+annee = st.sidebar.selectbox(
+    "Année",
+    annees,
+    index=annees.index(2025)
+)
+
+if not communes_choisies:
+    st.info("Choisissez au moins une commune.")
+else:
+    filtre = df[
+        df["commune"].isin(communes_choisies)
+        & (df["annee"] == annee)
+    ]
+    st.dataframe(filtre, hide_index=True)
