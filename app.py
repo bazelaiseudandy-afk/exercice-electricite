@@ -12,4 +12,4 @@ st.caption("Relevés mensuels de janvier 2024 à décembre 2025. Données fictiv
 
 brut = pd.read_csv(DOSSIER / "consommation_brut.csv")
 st.write(f"Le fichier brut compte {len(brut)} lignes.")
-st.dataframe(brut.head(10), hide_index=True)
+st.dataframe(brut, hide_index=True)
