@@ -59,7 +59,7 @@ Streamlit Community Cloud est gratuit, mais il ne déploie que depuis un dépôt
 gh repo create exercice-electricite --public --source . --remote perso --push
 ```
 
-Puis, sur [share.streamlit.io](https://share.streamlit.io) :
+Puis, sur [share.streamlit.io](https://share.streamlit.io) :https://exercice-electricite-bazelaiseudany.streamlit.app/
 
 1. **Continue with GitHub**, et acceptez l'accès à vos dépôts.
 2. **Create app**, puis **Deploy a public app from GitHub**.
