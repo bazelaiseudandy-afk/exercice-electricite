@@ -41,4 +41,18 @@ else:
         df["commune"].isin(communes_choisies)
         & (df["annee"] == annee)
     ]
-    st.dataframe(filtre, hide_index=True)
+    total_kwh = filtre["kwh"].sum()
+abonnes = filtre.drop_duplicates("quartier")["abonnes"].sum()
+kwh_par_abonne = total_kwh / abonnes
+heures_moyennes = filtre["heures_courant"].mean()
+
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.metric("Consommation totale", f"{total_kwh / 1_000_000:.2f} M kWh")
+with col2:
+    st.metric("Consommation par abonné", f"{kwh_par_abonne:.1f} kWh")
+with col3:
+    st.metric("Heures de courant", f"{heures_moyennes:.1f} h/jour")
+
+st.dataframe(filtre, hide_index=True)
