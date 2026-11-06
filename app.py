@@ -55,7 +55,7 @@ else:
     with col3:
         st.metric("Heures de courant", f"{heures_moyennes:.1f} h/jour")
 
-        analyses = df[df["commune"].isin(communes_choisies)]
+    analyses = df[df["commune"].isin(communes_choisies)]
 
     onglets = st.tabs([
         "Par quartier",
