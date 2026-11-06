@@ -10,6 +10,14 @@ st.set_page_config(page_title="L'électricité dans 12 quartiers", page_icon="�
 st.title("L'électricité dans 12 quartiers")
 st.caption("Relevés mensuels de janvier 2024 à décembre 2025. Données fictives.")
 
-brut = pd.read_csv(DOSSIER / "consommation_brut.csv")
-st.write(f"Le fichier brut compte {len(brut)} lignes.")
-st.dataframe(brut, hide_index=True)
+
+@st.cache_data
+def charger_donnees():
+    return pd.read_csv(DOSSIER / "consommation_propre.csv")
+
+
+df = charger_donnees()
+
+st.write("Ce tableau rassemble les relevés mensuels de 12 quartiers, de janvier 2024 à décembre 2025.")
+st.write("Chaque relevé combine consommation, abonnés, heures de courant et données météo.")
+st.dataframe(df, hide_index=True)
