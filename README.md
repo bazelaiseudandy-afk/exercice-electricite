@@ -1,6 +1,6 @@
 # Exercice complet : l'électricité dans 12 quartiers
 
-**Lien de mon application :** (à coller ici une fois en ligne)
+**Lien de mon application :*https://exercice-electricite-bazelaiseudany.streamlit.app/* (à coller ici une fois en ligne)
 
 Une compagnie d'électricité (fictive) vous confie deux ans de relevés, de janvier 2024 à décembre 2025, pour 12 quartiers de Port-au-Prince, Delmas, Pétion-Ville et Cap-Haïtien. Le directeur veut savoir si la consommation suit la chaleur, ou les heures de courant.
 
@@ -59,8 +59,7 @@ Streamlit Community Cloud est gratuit, mais il ne déploie que depuis un dépôt
 gh repo create exercice-electricite --public --source . --remote perso --push
 ```
 
-Puis, sur [share.streamlit.io](https://share.streamlit.io) :https://exercice-electricite-bazelaiseudany.streamlit.app/
-
+Puis, sur [share.streamlit.io](https://share.streamlit.io) :
 
 1. **Continue with GitHub**, et acceptez l'accès à vos dépôts.
 2. **Create app**, puis **Deploy a public app from GitHub**.
